@@ -24,6 +24,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, test-latest-css');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, test-latest-css'
+    );
+
+    const testCreateSpyObjReplace = jasmine.createSpyObj('AppComponent', [
+      'getData',
+    ]);
   });
 });
